@@ -1,4 +1,8 @@
-spring:
-  cloud:
-    config:
-     uri: http://localhost:9898
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
